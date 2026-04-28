@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  background: #f6f6f6;
-  font-family: sans-serif;
-  color: rgb(255, 255, 255);
+  background: #000000;
+  font-family: "SDK_JP_Web", sans-serif;
+  color: rgb(0, 0, 0);
 }
 
 .app {
@@ -13,12 +13,73 @@ body {
 
 header {
   padding: 10px;
-  background: #3a373d;
+  background: #f6f6f6;
+
+  border-top-right-radius: 40px; /*右上を丸く
+  /*border-bottom: 1px solid #555; /* 下に線 */
+  position: relative;
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  
+}
+
+header::after { /*線*/
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0px; /* 線ありなら34px */
+  right: 0px;  /* 線ありなら35px */
+  height: 2px;  /* 太さ */
+  background: rgb(0, 0, 0,0.2);;
+}
+/*header::before { 左の丸
+  content: "";
+  position: absolute;
+  bottom: -2px;     /* 線に合わせて微調整 
+  left: 28px;         /* 線と同じ位置 
+  width: 6px;
+  height: 6px;
+  background: rgb(0, 0, 0,0.2);
+  border-radius: 50%;
+}
+
+.header-dot-right { /*右の丸
+  position: absolute;
+  bottom: -2px;
+  right: 29px;
+  width: 6px;
+  height: 6px;
+  background: rgb(0, 0, 0,0.2);
+  border-radius: 50%;
+}*/
+
+header h2 {/*上の文字1*/
+  font-size: 18.5px;
+}
+
+header h3 {/*上の文字2*/
+  font-size: 14px;
+  opacity: 0.7;
+  color: rgb(0, 0, 0, 0.7);
+}
+
+header h2,
+header h3 {
+  margin: 0;
+  margin-left: 20px;
+  font-weight: 500;
 }
 
 main {
   flex: 1;
   overflow-y: auto;
+  background: #f6f6f6;  /* ← 元の背景色に戻す */
+  margin: 0 0;
   padding: 10px;
 }
 
@@ -28,6 +89,15 @@ footer {
   padding: 10px;
   background: #3a373d;
   gap: 8px;
+  flex: 0 0 auto;
+}
+
+header,
+main,
+footer {
+  width: 800px;/* 固定幅 */
+  max-width: 95%; /* スマホ用 */
+  margin: 0 auto; /* 中央配置 */
 }
 
 input {
@@ -59,18 +129,28 @@ button {
 .bubble {
   background: #ffffff;
   padding: 10px;
-  border-radius: 2px 12.5px 12.5px 12.5px;
-  box-shadow: -1px 1px 0 rgb(134, 131, 131);
+  padding-left: 18px; /* メッセージの左の余白 */
+  padding-right: 18px; /* メッセージの右の余白 */
+  padding-top: 10px;
+  padding-bottom: 13px;
+  border-radius: 2px 12.5px 12.5px 12.5px; /* 吹き出しの形(左上、右上、右下、左下) */
+  box-shadow: -1px 1.8px 0 rgb(168, 166, 166);
+  display: inline-block;
+  width: auto; /* ←重要 */
+  display: inline-block;
+  max-width: 86%;
 }
 
 .avatar {
+  position: relative;
   width: 60px !important;
   height: 60px;
   border-radius: 120%;
   background: #000000;
   object-fit: cover;
   object-position: center 20%;
-  top: 1px; 
+  top: -5px; 
+  margin-left: 15px;
   display: block;
 }
 
@@ -83,12 +163,16 @@ button {
 .chat-content {
   display: flex;
   flex-direction: column;  /* ← 縦並びにする */
+  position: relative; 
+  top: -3px; /* ← 上に移動 */
+  align-items: flex-start; /* ←これが重要 */
 }
 
 .name {
   font-size: 14px;
   margin-bottom: 5px;
-  color: #444444;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
 }
 
 /* 上段：入力欄 */
@@ -106,8 +190,8 @@ button {
 /* キャラ選択 */
 #characterSelect {
   padding: 6px;
-  background: #444;
-  color: white;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 5px;
 }
