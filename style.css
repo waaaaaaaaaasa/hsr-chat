@@ -17,7 +17,7 @@
 body{
   background:#000;
   font-family:"SDK_JP_Web",sans-serif;
-  overflow:hidden;
+  overflow-x:auto;
 }
 
 /* ===============================
@@ -991,11 +991,6 @@ body.modal-open .create-column h3{
 =============================== */
 @media screen and (max-width: 900px){
 
-  .layout{
-    display:flex;
-    flex-direction:column;
-  }
-
   /* 左は非表示 */
   .sidebar-left{
     display:none;
@@ -1054,4 +1049,28 @@ body.modal-open .create-column h3{
   button{
     width:100%;
   }
+}
+
+/* ===============================
+   スマホでもPCレイアウト維持
+=============================== */
+@media screen and (max-width: 900px){
+
+  body{
+    overflow:auto;
+  }
+
+  .layout{
+    display:grid;
+    grid-template-columns: 200px 800px 260px; /* PCと同じ構造 */
+    width:1260px; /* 全体固定幅 */
+  }
+
+  /* 全体を縮小表示 */
+  body{
+    transform:scale(0.75);
+    transform-origin: top left;
+    width: calc(100% / 0.75);
+  }
+
 }
