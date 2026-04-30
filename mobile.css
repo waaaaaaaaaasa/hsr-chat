@@ -1,231 +1,32 @@
+/* =========================================
+   スマホ専用（完全版）
+========================================= */
 @media screen and (max-width:600px){
 
+/* ===============================
+   基本
+=============================== */
 html, body{
   height:100%;
-  min-height:100dvh; 
-  overflow:hidden;
+  min-height:100dvh;
+  overflow-x:hidden; /* 横だけ禁止 */
 }
 
+/* ===============================
+   3カラム維持
+=============================== */
 .layout{
   display:grid;
   grid-template-columns: 1fr 2fr 1fr;
   width:100vw;
   height:100dvh;
-  overflow:hidden; /* ←追加 */
 }
 
-}
-
-/* 左パネル → 非表示 */
+/* ===============================
+   左パネル（非表示）
+=============================== */
 .sidebar-left{
   display:none;
-}
-
-/* 中央 */
-.main-area{
-  width:100%;
-  height:100vh;
-}
-
-/* キャラ横スクロール */
-#characterPool{
-  display:flex;
-  overflow-x:auto;
-  overflow-y:hidden;
-  gap:10px;
-}
-
-.char-item{
-  min-width:70px;
-}
-
-/* メッセージ */
-.message .avatar{
-  width:48px;
-  height:48px;
-}
-
-.bubble{
-  font-size:16px;
-  max-width:90%;
-}
-
-/* 入力欄 */
-.input-area{
-  flex-direction:column;
-}
-
-#groupSpeakerSelect,
-#messageInput,
-#sendBtn{
-  width:100%;
-}
-
-/* 余白削除 */
-body{
-  margin:0;
-  padding:0;
-  overflow-x:hidden;
-}
-
-/* ▼ 3カラム維持（中央を広く） */
-.layout{
-  display:grid;
-  grid-template-columns: 1fr 2fr 1fr; /* ←重要 */
-  width:100vw;
-  height:100vh;
-}
-
-/* ▼ 中央の800px固定を解除 */
-.main-area{
-  width:100%;
-  min-width:0;
-  max-width:none;
-}
-
-/* ▼ キャラ選択が中央に来ないように */
-.sidebar-right{
-  display:flex;
-  flex-direction:column;
-}
-
-/* ▼ キャラ一覧を横スクロールに */
-#characterPool{
-  display:flex;
-  overflow-x:auto;
-  overflow-y:hidden;
-  gap:10px;
-}
-
-/* ▼ チャットUI調整 */
-.message .avatar{
-  width:48px;
-  height:48px;
-}
-
-.bubble{
-  font-size:16px;
-  max-width:90%;
-}
-
-/* ▼ 入力欄を縦に */
-.input-area{
-  flex-direction:column;
-}
-
-#groupSpeakerSelect,
-#messageInput,
-#sendBtn{
-  width:100%;
-}
-
-.main-area{
-  display:flex;
-  flex-direction:column;
-  height:100%;
-  overflow:hidden;
-}
-
-#chatBox{
-  flex:1;
-  overflow-y:auto;
-}
-
-.sidebar-left{
-  height:100%;
-  overflow-y:auto;
-}
-
-.sidebar-right{
-  display:flex;
-  flex-direction:column;
-  height:100%;
-  overflow:hidden;
-min-height:0;
-}
-
-.char-panel{
-  flex:0 0 auto;   /* ←固定やめる */
-  max-height:20%;  /* ←上限だけ設定 */
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-}
-
-#characterPool{
-  flex:1;
-  overflow-y:auto;
-}
-
-.right-bottom{
-  flex:1;
-  min-height:0; /* ←これ超重要 */
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:6px;
-  overflow:hidden;
-}
-
-.member-column{
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-}
-
-#groupMembers{
-  flex:1;
-  overflow-y:auto;
-}
-
-.create-column{
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-}
-
-#selectedGroup{
-  flex:1;
-  overflow-y:auto;
-}
-
-.trash-box{
-  flex-shrink:0;
-}
-
-.member-column,
-.create-column{
-  display:flex;
-  flex-direction:column;
-  min-height:0; /* ←これないと見切れる */
-  overflow:hidden;
-}
-
-#groupMembers,
-#selectedGroup{
-  flex:1;
-  min-height:0; /* ←これも重要 */
-  overflow-y:auto;
-}
-
-@media screen and (max-width:600px){
-
-/* ===============================
-   全体固定
-=============================== */
-html, body{
-  height:100%;
-  overflow:hidden;
-  min-height:100dvh; 
-}
-
-/* ===============================
-   3カラム
-=============================== */
-.layout{
-  display:grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  height:100vh;
-  overflow:hidden;
 }
 
 /* ===============================
@@ -238,6 +39,11 @@ html, body{
   overflow:hidden;
 }
 
+header,
+footer{
+  flex-shrink:0;
+}
+
 #chatBox{
   flex:1;
   min-height:0;
@@ -245,20 +51,19 @@ html, body{
 }
 
 /* ===============================
-   右パネル
+   右パネル（通常）
 =============================== */
 .sidebar-right{
   display:flex;
   flex-direction:column;
   height:100%;
   min-height:0;
-  overflow:hidden;
 }
 
-/* 上：キャラ選択 */
+/* ▼ キャラ選択（上） */
 .char-panel{
   flex:0 0 auto;
-  max-height:40%;
+  max-height:35%;
   display:flex;
   flex-direction:column;
   overflow:hidden;
@@ -267,120 +72,77 @@ html, body{
 #characterPool{
   flex:1;
   min-height:0;
+  overflow-x:auto;
   overflow-y:auto;
 }
 
-/* 下：2列 */
+/* ▼ 下エリア */
 .right-bottom{
   flex:1;
   min-height:0;
   display:grid;
   grid-template-columns:1fr 1fr;
-  overflow:hidden;
 }
 
-/* 左列（現在メンバー） */
-.member-column{
-  display:flex;
-  flex-direction:column;
-  min-height:0;
-}
-
-#groupMembers{
-  flex:1;
-  min-height:0;
-  overflow-y:auto;
-}
-
-/* 右列（新規編成） */
+/* ▼ 共通カラム */
+.member-column,
 .create-column{
   display:flex;
   flex-direction:column;
   min-height:0;
 }
 
+/* ▼ スクロール部分 */
+#groupMembers,
 #selectedGroup{
   flex:1;
   min-height:0;
   overflow-y:auto;
 }
 
-/* ゴミ箱固定 */
+/* ▼ ゴミ箱固定 */
 .trash-box{
   flex-shrink:0;
 }
 
-header{
-  flex-shrink:0;
 }
 
-footer{
-  flex-shrink:0;
-}
-
-
-/* ===============================
-   スマホ横画面：右パネルのみ縦スクロール
-=============================== */
+/* =========================================
+   スマホ横画面：右だけスクロール
+========================================= */
 @media screen and (max-width:600px) and (orientation: landscape){
 
-/* 全体はスクロール禁止 */
+/* 全体固定（スクロール禁止） */
 html, body{
-  height:100%;
   overflow:hidden;
 }
 
-/* レイアウト固定 */
-.layout{
-  height:100vh;
-  overflow:hidden;
-}
-
-/* 中央はスクロールさせない */
+/* 中央スクロール禁止 */
 .main-area{
-  height:100%;
   overflow:hidden;
 }
 
-/* チャット欄も固定 */
 #chatBox{
   overflow:hidden;
 }
 
-/* ▼ ここが本命：右だけスクロール */
+/* ▼ 右パネルだけスクロール許可 */
 .sidebar-right{
-  height:100%;
   overflow-y:auto;
   overflow-x:hidden;
 }
 
-/* ▼ 内部のはみ出し防止（超重要） */
-.right-bottom{
-  min-height:auto;
-}
-
+/* ▼ 内部高さ制限解除（重要） */
+.right-bottom,
 .member-column,
 .create-column{
   min-height:auto;
 }
 
-/* ▼ ドロップ欄は高さ自動に */
 #groupMembers,
 #selectedGroup{
   height:auto;
   max-height:none;
-}
-
-}
-
-/* 通常はスクロール許可 */
-html, body{
-  height:100%;
-  overflow-x:hidden;
-}
-
-.sidebar-right{
-  overflow:visible; /* or 消す */
 }
 
 }
