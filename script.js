@@ -55,7 +55,7 @@ const characters = [
    状態管理
 =============================== */
 let currentChat = {
-  name: "未保存",
+  name: "HSRチャット",
   type: "solo",
   characters: [],
   subtitle: "",
