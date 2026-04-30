@@ -146,7 +146,7 @@ min-height:0;
 
 .char-panel{
   flex:0 0 auto;   /* ←固定やめる */
-  max-height:40%;  /* ←上限だけ設定 */
+  max-height:20%;  /* ←上限だけ設定 */
   display:flex;
   flex-direction:column;
   overflow:hidden;
