@@ -1,10 +1,16 @@
 @media screen and (max-width:600px){
 
+html, body{
+  height:100%;
+  overflow:hidden;
+}
+
 .layout{
   display:grid;
-  grid-template-columns: 1fr 2fr 1fr; /* ←これが重要 */
+  grid-template-columns: 1fr 2fr 1fr;
   width:100vw;
   height:100vh;
+  overflow:hidden; /* ←追加 */
 }
 
 }
@@ -128,6 +134,76 @@ body{
 #messageInput,
 #sendBtn{
   width:100%;
+}
+
+.main-area{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  overflow:hidden;
+}
+
+#chatBox{
+  flex:1;
+  overflow-y:auto;
+}
+
+.sidebar-left{
+  height:100%;
+  overflow-y:auto;
+}
+
+.sidebar-right{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  overflow:hidden;
+}
+
+.char-panel{
+  flex:0 0 45%;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+#characterPool{
+  flex:1;
+  overflow-y:auto;
+}
+
+.right-bottom{
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  overflow:hidden;
+}
+
+.member-column{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+#groupMembers{
+  flex:1;
+  overflow-y:auto;
+}
+
+.create-column{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+#selectedGroup{
+  flex:1;
+  overflow-y:auto;
+}
+
+.trash-box{
+  flex-shrink:0;
 }
 
 }
