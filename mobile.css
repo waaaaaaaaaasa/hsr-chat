@@ -1,129 +1,74 @@
-/* ===============================
-   スマホ専用（横画面前提）
-=============================== */
 @media screen and (max-width: 600px){
 
 /* ===============================
-   全体レイアウト
+   全体（余白をつける）
 =============================== */
+body{
+  background:#111;
+}
+
 .layout{
-  grid-template-columns: 120px 1fr 120px;
-  gap: 8px;
-  padding: 8px;
+  grid-template-columns: 90px 1fr 90px;
+  gap: 10px;
+  padding: 10px;
 }
 
 /* ===============================
-   左右パネルを大きく
+   左右パネルを見やすく
 =============================== */
 .sidebar-left,
 .sidebar-right{
-  padding: 10px;
-  font-size: 13px;
+  padding: 12px;
+  font-size: 14px;
 }
 
 /* ===============================
    中央
 =============================== */
 .main-area{
-  min-width: 0;
-  width: 100%;
+  width:100%;
+  min-width:0;
 }
 
 /* ===============================
-   ヘッダー縮小
-=============================== */
-header h2{
-  font-size: 16px;
-}
-header h3{
-  font-size: 12px;
-}
-
-/* ===============================
-   チャットUI縮小
+   チャットUIを少し大きく
 =============================== */
 .message .avatar{
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
 }
 
 .bubble{
-  font-size: 14px;
-  padding: 10px;
+  font-size: 18px;
+  padding: 12px;
   max-width: 95%;
 }
 
 /* ===============================
    入力欄
 =============================== */
-.input-area{
-  gap: 4px;
-}
-
 #messageInput{
-  font-size: 14px;
-  padding: 8px;
+  font-size: 16px;
 }
 
 #sendBtn{
-  font-size: 14px;
-  padding: 8px;
+  font-size: 16px;
 }
 
 /* ===============================
-   キャラ選択
+   キャラUI拡大
 =============================== */
+.char-icon{
+  width: 56px;
+  height: 56px;
+}
+
+.char-name{
+  font-size: 12px;
+}
+
 #characterPool{
   grid-template-columns: repeat(2,1fr);
-  gap: 6px;
-}
-
-/* アイコン */
-.char-icon{
-  width: 44px;
-  height: 44px;
-}
-
-/* 名前 */
-.char-name{
-  font-size: 10px;
-}
-
-/* ===============================
-   ドロップ欄
-=============================== */
-.drop-box{
-  height: 180px;
-  min-height: 180px;
-  max-height: 180px;
-}
-
-/* ===============================
-   チャット一覧
-=============================== */
-.chat-item{
-  padding: 6px;
-  min-height: 60px;
-}
-
-.chat-title{
-  font-size: 13px;
-}
-
-.chat-meta{
-  font-size: 10px;
-}
-
-/* ===============================
-   左右に余白をつける（重要）
-=============================== */
-body{
-  background:#111;
-}
-
-/* 中央に少し余白感を出す */
-.layout{
-  max-width: 100%;
 }
 
 }
