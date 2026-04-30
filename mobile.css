@@ -1,74 +1,62 @@
 @media screen and (max-width: 600px){
 
-/* ===============================
-   全体（余白をつける）
-=============================== */
-body{
-  background:#111;
-}
-
+/* 全体を縦レイアウトに変更 */
 .layout{
-  grid-template-columns: 90px 1fr 90px;
-  gap: 10px;
-  padding: 10px;
+  display:flex;
+  flex-direction:column;
+  padding:0;
+  gap:0;
 }
 
-/* ===============================
-   左右パネルを見やすく
-=============================== */
-.sidebar-left,
-.sidebar-right{
-  padding: 12px;
-  font-size: 14px;
+/* 左パネル → 非表示 */
+.sidebar-left{
+  display:none;
 }
 
-/* ===============================
-   中央
-=============================== */
+/* 中央 */
 .main-area{
   width:100%;
-  min-width:0;
+  height:100vh;
 }
 
-/* ===============================
-   チャットUIを少し大きく
-=============================== */
+/* 右パネル → 下に配置 */
+.sidebar-right{
+  width:100%;
+  height:auto;
+}
+
+/* キャラ横スクロール */
+#characterPool{
+  display:flex;
+  overflow-x:auto;
+  overflow-y:hidden;
+  gap:10px;
+}
+
+.char-item{
+  min-width:70px;
+}
+
+/* メッセージ */
 .message .avatar{
-  width: 52px;
-  height: 52px;
+  width:48px;
+  height:48px;
 }
 
 .bubble{
-  font-size: 18px;
-  padding: 12px;
-  max-width: 95%;
+  font-size:16px;
+  max-width:90%;
 }
 
-/* ===============================
-   入力欄
-=============================== */
-#messageInput{
-  font-size: 16px;
+/* 入力欄 */
+.input-area{
+  flex-direction:column;
 }
 
+#groupSpeakerSelect,
+#messageInput,
 #sendBtn{
-  font-size: 16px;
-}
-
-/* ===============================
-   キャラUI拡大
-=============================== */
-.char-icon{
-  width: 56px;
-  height: 56px;
-}
-
-.char-name{
-  font-size: 12px;
-}
-
-#characterPool{
-  grid-template-columns: repeat(2,1fr);
+  width:100%;
 }
 
 }
