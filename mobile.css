@@ -1,0 +1,84 @@
+/* ===============================
+   スマホ（〜600px）
+=============================== */
+
+body{
+  overflow:auto;
+}
+
+/* 3カラム維持（重要） */
+.layout{
+  grid-template-columns: 120px 1fr 120px;
+}
+
+/* 中央 */
+.main-area{
+  width:100%;
+  min-width:0;
+}
+
+/* 左右パネルを細く */
+.sidebar-left,
+.sidebar-right{
+  padding:6px;
+  font-size:12px;
+}
+
+/* キャラ数を7列にする（あなたの希望） */
+#characterPool{
+  grid-template-columns: repeat(7, 1fr);
+  gap:4px;
+}
+
+/* アイコン縮小 */
+.char-icon{
+  width:36px;
+  height:36px;
+}
+
+/* 名前小さく */
+.char-name{
+  font-size:9px;
+}
+
+/* メッセージUI縮小 */
+.message .avatar{
+  width:40px;
+  height:40px;
+}
+
+.bubble{
+  font-size:14px;
+  padding:8px 10px;
+  max-width:95%;
+}
+
+/* 入力欄 */
+.input-area{
+  flex-direction:column;
+  gap:4px;
+}
+
+input{
+  font-size:14px;
+}
+
+/* ボタン */
+button{
+  font-size:14px;
+}
+
+@media screen and (orientation: portrait){
+  body::before{
+    content:"横向きで使用してください";
+    position:fixed;
+    inset:0;
+    background:#000;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    z-index:9999;
+  }
+}

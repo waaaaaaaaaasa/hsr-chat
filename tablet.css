@@ -1,0 +1,30 @@
+/* ===============================
+   タブレット（〜1024px）
+=============================== */
+
+.layout{
+  grid-template-columns: 260px 1fr 260px;
+}
+
+.main-area{
+  width:100%;
+  min-width:0;
+  max-width:none;
+}
+
+/* キャラ数を少し減らす */
+#characterPool{
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* メッセージ少し小さく */
+.bubble{
+  font-size:18px;
+  max-width:90%;
+}
+
+/* アイコン縮小 */
+.message .avatar{
+  width:56px;
+  height:56px;
+}
