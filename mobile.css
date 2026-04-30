@@ -69,11 +69,24 @@ footer{
   overflow:hidden;
 }
 
+/* ===============================
+   キャラ一覧：スマホは1行横スクロール
+=============================== */
 #characterPool{
-  flex:1;
-  min-height:0;
-  overflow-x:auto;
-  overflow-y:auto;
+  display:flex !important;      /* ← gridを無効化 */
+  flex-wrap:nowrap;             /* ← 折り返し禁止（1行固定） */
+
+  overflow-x:auto;              /* 横スクロール */
+  overflow-y:hidden;
+
+  gap:10px;
+  padding-bottom:4px;
+}
+
+/* 各キャラを固定幅に */
+.char-item{
+  flex:0 0 auto;   /* ←これ重要（縮まない） */
+  width:70px;
 }
 
 /* ▼ 下エリア */
